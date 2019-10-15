@@ -6,11 +6,11 @@ To install:
 
 `npm install`
 
-To Build
+To Build, which puts a small website in the "Dist" directory:
 
 `npm run build`
 
-To Run Localhost Server
+To Run A Localhost Server Instead:
 
 `npm run watch`
 
