@@ -1,0 +1,140 @@
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    color: #32313b;
+    background-color: #fcfa78;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    color: #444;
+    font-size: 16px;    
+}
+
+#container {
+    max-width: 760px;
+    padding: 0 20px;
+    margin: 0 auto;
+    min-height: 100%;
+    border-left: solid 5px rgba(0,0,0,0.2);
+    border-right: solid 5px rgba(0,0,0,0.2);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+h1 {
+    font-size: 250%;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 0;
+    padding-top: 20px;
+}
+
+h2, h3 {
+    font-weight: lighter;
+}
+
+body, input[type="text"], button {
+    color: #333;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.task {
+    &.completed {
+        text-decoration: line-through;
+    }
+}
+
+header p {
+    text-align: center;
+}
+
+input[type="text"] {
+    line-height: 2em;
+    padding: 0 5px;
+    font-size: 16px;
+}
+
+.new-task-input {
+    width: calc(100% - 200px);
+    margin-right: 10px;
+}
+
+button {
+    background: #32313b;
+    color: #fcfa78;
+    border: none;
+    line-height: 2em;
+    padding: 2px 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:focus,
+button:hover {
+    color: #32313b;
+    background: #fcfa78;
+    border: solid 2px #32313b;
+    padding: 0 3px;
+}
+
+.tasks {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.tasks li {
+    margin-bottom: 10px;
+}
+
+.tasks .mark {
+    margin-right: 10px;
+}
+
+.tasks .task-text {
+    display: inline-block; 
+    width: calc(100% - 212px); 
+}
+
+.task.completed .task-text {
+    text-decoration: line-through;
+}
+
+.task.completed .mark {
+    opacity: 0.5;
+}
+
+.task input[type="text"] {
+    width: calc(100% - 236px);
+    margin-right: 10px;
+}
+
+@media only screen and (max-width: 1000px) {
+    #container {
+        max-width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1000px) { 
+
+    header h1 {
+        font-size: 48px;
+        line-height: 1.2em;
+    }
+
+    h2 {
+        font-size: 44px;
+    }
+
+    input[type="text"], button, p, span {
+        font-size: 36px;
+    }
+}
+

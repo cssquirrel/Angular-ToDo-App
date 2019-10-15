@@ -1,0 +1,36 @@
+<app-new-task-form
+    [tasks]="tasks"
+    [onAddTask]="addTask"
+></app-new-task-form>
+<h2>Tasks To Complete</h2>
+<ul class="tasks">
+    <li 
+        *ngFor="let task of tasks"
+        class="task"
+        [class.selected]="selectedTask === task"
+        [class.completed]="task.isDone"
+    >
+        <button 
+            class="mark"
+            title="mark task"
+            (click)="markTask(task)"
+        >✔</button> <span *ngIf="selectedTask !== task" class="task-text">{{task.text}}</span>
+        <input 
+            *ngIf="selectedTask === task" [(ngModel)]="task.text" type="text" />
+        <button 
+            *ngIf="task.isDone"
+            class="delete" 
+            title="delete task"
+            (click)="deleteTask(task)"
+        >X</button>
+        <button 
+            *ngIf="!task.isDone"
+            class="edit"
+            title="edit task"
+            (click)="selectTaskToEdit(task)"
+        >
+            <span *ngIf="selectedTask !== task">Edit</span>
+            <span *ngIf="selectedTask === task">Save</span>
+        </button>
+    </li>
+</ul>
