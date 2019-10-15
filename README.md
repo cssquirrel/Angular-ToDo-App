@@ -4,13 +4,13 @@
 
 To install:
 
-```npm install``
+`npm install`
 
 To Build
 
-```npm run build```
+`npm run build`
 
 To Run Localhost Server
 
-``` npm run watch```
+`npm run watch`
 
