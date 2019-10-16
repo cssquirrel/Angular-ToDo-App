@@ -10,7 +10,7 @@ To Build, which puts a small website in the "Dist" directory:
 
 `npm run build`
 
-To Run A Localhost Server Instead:
+To run a localhost server instead:
 
 `npm run watch`
 

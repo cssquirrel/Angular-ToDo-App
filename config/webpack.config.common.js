@@ -1,12 +1,17 @@
 'use strict';
 
 const webpack = require('webpack');
+const path = require('path');
 
-const CleanWebpackPlugin   = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin    = require('html-webpack-plugin');
 
 const helpers              = require('./helpers');
 const isDev                = process.env.NODE_ENV !== 'production';
+
+const relPath = (pattern) => {
+    return path.join(process.cwd(), pattern);
+}
 
 module.exports = {
     entry: {
@@ -55,9 +60,18 @@ module.exports = {
             helpers.root('./src'),
             {}
         ),
-        new CleanWebpackPlugin(
-            helpers.root('dist'), { root: helpers.root(), verbose: true }),
-
+        new CleanWebpackPlugin({
+            cleanOnceBeforeBuildPatterns: [relPath('./dist/*.*')],
+            cleanAfterEveryBuildPatterns: [
+                relPath('./src/**/*.js.map'),
+                relPath('./src/**/*.js'),
+                relPath('./src/**/*.ngsummary.json'),
+                relPath('./src/**/*.metadata.json'),
+                relPath('./src/**/**/*.ngfactory.ts'),
+                relPath('./src/**/*.ngstyle.ts'),
+                relPath('./src/**/*.shim.ts')                
+            ]
+        }),
         new HtmlWebpackPlugin({
             template: 'src/index.html'
         })
